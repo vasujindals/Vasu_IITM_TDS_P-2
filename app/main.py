@@ -5,6 +5,7 @@ from typing import Optional
 from app.utils.openai_client import get_openai_response
 from app.utils.file_handler import save_upload_file_temporarily
 import httpx
+import json #added import
 
 # Import the functions you want to test directly
 from app.utils.functions import *
@@ -89,7 +90,8 @@ async def debug_function(
         return {"error": str(e), "traceback": traceback.format_exc()}
 
 
-if __name__ == "__main__":
-    import uvicorn
+from fastapi.responses import PlainTextResponse
 
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+@app.get("/favicon.ico")
+async def favicon():
+    return PlainTextResponse("", status_code=204)
