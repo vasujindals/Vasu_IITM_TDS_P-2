@@ -4,11 +4,12 @@ import os
 from typing import Optional
 from app.utils.openai_client import get_openai_response
 from app.utils.file_handler import save_upload_file_temporarily
+import httpx
 
 # Import the functions you want to test directly
 from app.utils.functions import *
 
-app = FastAPI(title="IITM Assignment API")
+app = FastAPI(title="IITM AI Helper by Vasu")
 
 # Add CORS middleware
 app.add_middleware(
