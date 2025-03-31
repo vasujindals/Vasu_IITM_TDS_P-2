@@ -13,7 +13,10 @@ from app.utils.functions import *
 
 load_dotenv()
 
-AIPROXY_TOKEN = os.getenv("AIPROXY_TOKEN")
+AIPROXY_TOKEN = os.environ.get("AIPROXY_TOKEN")
+
+if not AIPROXY_TOKEN:
+    raise EnvironmentError("AIPROXY_TOKEN not found in environment variables.")
 AIPROXY_BASE_URL = "https://aiproxy.sanand.workers.dev/openai/v1"
 
 
