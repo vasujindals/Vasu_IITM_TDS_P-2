@@ -8,27 +8,27 @@ It uses a powerful LLM backend and tool-calling capabilities to handle assignmen
 
 ## 🚀 Quickstart
 
-1. **Clone the repository**
+1. **Clone the repository:** 
    git clone https://github.com/vasujindals/TDS_Project_2.git
    cd TDS_Project_2
 
-2. **Create a virtual environment**
+2. **Create a virtual environment:**
    python -m venv venv
 
-3. **Activate the virtual environment**
+3. **Activate the virtual environment:**
    - Windows:
      venv\Scripts\activate
 
    - macOS/Linux:
      source venv/bin/activate
 
-4. **Install dependencies**
+4. **Install dependencies:**
    pip install -r requirements.txt
 
-5. **Create a `.env` file** and add your AIProxy token:
+5. **Create a `.env` file:** and add your AIProxy token:
    AIPROXY_TOKEN=your_token_here
 
-6. **Run the server**
+6. **Run the server:**
    uvicorn app.main:app --reload
 
 
@@ -57,27 +57,6 @@ curl -X POST "http://localhost:8000/api/" \
 {
   "answer": "1234567890"
 }
-
-
----
-
-## 🗂 Project Structure
-
-
-TDS_Project_2/
-│
-├── app/
-│   ├── main.py               # Main FastAPI app
-│   └── utils/
-│       ├── file_handler.py   # Utility to handle uploaded files
-│       ├── functions.py      # All function-calling tools
-│       └── openai_client.py  # Core LLM + tool-call handler
-│
-├── requirements.txt          # Python dependencies
-├── LICENSE                   # MIT License
-└── .env                      # Environment variables (not committed)
-
-
 
 ## 📄 License
 
